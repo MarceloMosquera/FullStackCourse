@@ -4,13 +4,16 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { AppComponent } from './app.component';
+import { AppComponent, PizzaPartyComponent, DialogOverviewExampleDialog } from './app.component';
 
 import 'hammerjs';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PizzaPartyComponent, 
+    DialogOverviewExampleDialog, MenuComponent
   ],
   imports: [
     BrowserModule,    
@@ -18,6 +21,7 @@ import 'hammerjs';
     MaterialModule,
     FlexLayoutModule
   ],
+  entryComponents: [DialogOverviewExampleDialog, PizzaPartyComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
