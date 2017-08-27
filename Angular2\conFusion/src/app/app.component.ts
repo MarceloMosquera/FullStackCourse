@@ -24,7 +24,8 @@ export class AppComponent {
 
 @Component({
   selector: 'snack-bar-component-example-snack',
-  template: '<p> Hi, Im a snack! </p>'
+  template: ` <img md-list-avatar src='/assets/images/elaicheesecake.png' >
+              <h1 md-line> PPEPEPE </h1>`
 })
 export class PizzaPartyComponent {}
 
