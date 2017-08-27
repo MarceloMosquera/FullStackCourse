@@ -8,12 +8,13 @@ import { AppComponent, PizzaPartyComponent, DialogOverviewExampleDialog } from '
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaPartyComponent, 
-    DialogOverviewExampleDialog, MenuComponent
+    DialogOverviewExampleDialog, MenuComponent, DishdetailComponent
   ],
   imports: [
     BrowserModule,    
