@@ -9,23 +9,28 @@ import { AppComponent, PizzaPartyComponent, DialogOverviewExampleDialog } from '
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
-
-import { DishService } from './services/dish.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
+import { DishService } from './services/dish.service';
+
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaPartyComponent, 
-    DialogOverviewExampleDialog, MenuComponent, DishdetailComponent, HeaderComponent, FooterComponent
+    DialogOverviewExampleDialog, MenuComponent, DishdetailComponent, HeaderComponent, FooterComponent, HomeComponent, AboutComponent, ContactComponent
   ],
   imports: [
     BrowserModule,    
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
   entryComponents: [DialogOverviewExampleDialog, PizzaPartyComponent],
   providers: [DishService],
