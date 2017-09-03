@@ -33,4 +33,11 @@ export class ProcessHttpmsgProvider {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
+
+
+  getData(url: string): Observable<any> {
+    return this.http.get(url)
+                    .map(res => { return this.extractData(res)[0]; })
+                    .catch(error => { return this.handleError(error); });
+  }
 }

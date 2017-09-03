@@ -37,4 +37,8 @@ export class DishProvider {
                     .catch(error => { return this.processHTTPMsgService.handleError(error); });
   }
 
+
+  getFeaturedDish2(): Observable<Dish> {
+    return this.processHTTPMsgService.getData(baseURL + 'dishes?featured=true');
+  }
 }

@@ -27,7 +27,7 @@ export class HomePage implements OnInit {
     @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
-    this.dishservice.getFeaturedDish()
+    this.dishservice.getFeaturedDish2()
        .subscribe(dish => this.dish = dish,
         errmess => this.dishErrMess = <any>errmess );
     this.promotionservice.getFeaturedPromotion()
