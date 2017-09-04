@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Leader } from '../../shared/leader';
+import { Comment } from '../../shared/comment';
+import { LeaderProvider } from '../../providers/leader/leader';
 
 /**
  * Generated class for the AboutPage page.
@@ -15,11 +18,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  leaders: Leader[];
+  leaderErrMess: string;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AboutPage');
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private leaderservice: LeaderProvider,
+    @Inject('BaseURL') private BaseURL) { }
+
+  ngOnInit() {
+    this.leaderservice.getLeaders()
+      .subscribe(leader => this.leaders = leader,
+        errmess => this.leaderErrMess = <any>errmess );
+
   }
 
 }
