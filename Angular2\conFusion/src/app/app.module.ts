@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent, PizzaPartyComponent, DialogOverviewExampleDialog } from './app.component';
 
@@ -35,7 +36,8 @@ import { LoginComponent } from './login/login.component';
     MaterialModule,
     FlexLayoutModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [LoginComponent, PizzaPartyComponent],
   providers: [DishService, PromotionService, LeaderService],
