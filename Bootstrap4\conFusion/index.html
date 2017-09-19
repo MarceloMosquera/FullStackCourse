@@ -36,21 +36,17 @@
 
     <header class="jumbotron">
         <div class="container">
-            <div class="row row-header">
-                <div class="col-12 col-sm-8">
+            <div class="row row-header align-items-center">
+                <div class="col-12 col-sm-6">
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking
                         creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col col-sm align-self-center">
-                    <div class="row align-items-center">
-                        <div class="col-sm-6">
-                            <img src="img/logo.png" class="img-fluid">
-                        </div>
-                        <div class="col-sm-6">
-                            <a type="button" class="btn btn-sm btn-warning" href="#reserve">Reseve Table</a>
-                        </div>
-                    </div>
+                <div class="col-12 col-sm-3">
+                    <img src="img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-12 col-sm-3">
+                    <a class="btn btn-sm btn-warning" href="#reserve">Reseve Table</a>
                 </div>
             </div>
         </div>
@@ -86,7 +82,7 @@
                             main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per
                             person </p>
                     </div>
-                    <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/buffet.png" alt="Promotion">
+                    <img class="d-flex ml-3 img-thumbnail align-self-center" src="img/buffet.png" alt="Promotion">
                 </div>
             </div>
         </div>
@@ -144,23 +140,20 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="dateandtime" class="col-md-2 col-form-label">Date and Time</label>
-                                <div class="col-5">
+                                <label for="datetime" class="col-sm-3 control-label">Date and Time</label>
+                                <div class="col-sm-4 has-feedback">
                                     <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <span class="fa fa-calendar"></span>
-                                        </div>
-                                        <input type="date" class="form-control" id="date" name="date" placeholder="Date" />
+                                        <span class="input-group-addon fa fa-calendar" aria-hidden="true"></span>
+                                        <input type="text" class="form-control" id="date" placeholder="Date"/>
                                     </div>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-sm-4 has-feedback">
                                     <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <span class="fa fa-clock-o"></span>
-                                        </div>
-                                        <input type="time" class="form-control" id="time" name="time" placeholder="Time" />
+                                        <span class="input-group-addon fa fa-clock-o" aria-hidden="true"></span>
+                                        <input type="text" class="form-control" id="time" placeholder="Time"/>
                                     </div>
                                 </div>
+    
                             </div>
                             <div class="form-group row">
                                 <div class="offset-md-2 col-md-10">
