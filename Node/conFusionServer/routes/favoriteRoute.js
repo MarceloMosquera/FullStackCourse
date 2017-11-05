@@ -24,12 +24,15 @@ favoriteRouter.route('/')
     .catch((err) => next(err));
 })
 .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => { 
-    Favorites.create({"user" : req.user._id, "dishes": req.body})
-    .then((fav) => {
-        console.log('Favorites Created ', fav);
+    Favorites.findOneAndUpdate( 
+        { "user": req.user._id}, 
+        { "dishes": req.body } , 
+        { upsert: true,  new: true }
+    )
+    .then((resp) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(fav);
+        res.json(resp);
     }, (err) => next(err))
     .catch((err) => next(err));
 })
@@ -63,7 +66,8 @@ favoriteRouter.route('/:dishId')
 .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     Favorites.findOneAndUpdate( 
         {"user": req.user._id, "dishes": { $ne: req.params.dishId}}, 
-        { $push: {dishes: req.params.dishId } } 
+        { $push: {dishes: req.params.dishId } } , 
+        {  new: true }
     )
     .then((resp) => {
         res.statusCode = 200;
@@ -75,7 +79,6 @@ favoriteRouter.route('/:dishId')
 .put(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     res.statusCode = 403;
     res.end('POST operation not supported on /favorites/'+ req.params.dishId);
-    
 })
 .delete(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     Favorites.update( 
